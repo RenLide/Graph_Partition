@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "LDG::CaculateBlockEdges(int):LDG.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "it-&gt;second">
+            </PersistentString>
+            <PersistentString
+               value = "it-&gt;first">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LDG::CaculateBlockWeights(int):LDG.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "it-&gt;second">
+            </PersistentString>
+            <PersistentString
+               value = "it-&gt;first">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LDG::DistributeBlocks():LDG.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "it-&gt;second">
+            </PersistentString>
+            <PersistentString
+               value = "it-&gt;first">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "graph::InitGraph():graph.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "graph::PrintGraphWeight():graph.cpp">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
