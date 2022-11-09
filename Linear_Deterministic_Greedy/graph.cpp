@@ -9,6 +9,7 @@ Graph::Graph(int r, int col) : row(r), column(col) {
     this->grid.resize(this->row * this->column, Point(0, 0));
     weights = 0;
 }
+
 void Graph::InitGraph () {
     default_random_engine e(time(0));
     uniform_real_distribution<float> u(0, 1);
@@ -29,17 +30,39 @@ void Graph::InitGraph () {
         }
     }
 }
-void Graph::PrintGraphWeight() {
+
+void Graph::InitGraph (ifstream& infile) {
+    float x, y, w;
+    int flag;
     for (int i = 0; i < this->row; i++) {
+        for (int j = 0; j < this->column; j++) {
+            y = Y_MIN + i * RE;
+            x = X_MIN + j * RE;
+            //cout << w << "\t";
+            infile >> w;
+            infile >> flag;
+            //cout << w << "\t";
+            grid[i * column + j] = Point(x, y, w, x + y);
+            weights += w;
+            //cout << grid[i * column + j].GetW() << endl;
+            //test (x,y)
+            //grid[i * column + j].PrintInfo();
+        }
+    }
+}
+
+void Graph::PrintGraphWeight() {
+//    for (int i = 0; i < this->row; i++) {
+    for (int i = this->row - 1; i >= 0; i--) {
         for (int j = 0; j < this->column; j++) {
             cout.precision(4);
             //test (x,y)
 //            cout << "(" << setw(4) << left << setfill(' ') << grid[i * column + j].GetX();
 //            cout << "," << setw(4) << left << setfill(' ') << grid[i * column + j].GetY() << ")";
-            cout << "(" << i;
-            cout << "," << j << ")";
+            cout << "(" << j;
+            cout << "," << i << ")";
             cout << "[" << setw(5) << right << setfill(' ') << grid[i * column + j].GetW() << "]";
-            cout << "{" << setw(2) << right << setfill(' ')<< grid[i * column + j].GetF() << "}";
+//            cout << "{" << setw(2) << right << setfill(' ')<< grid[i * column + j].GetF() << "}";
             cout << (j != this->column - 1? "\t" : "\n");
         }
         cout << endl;

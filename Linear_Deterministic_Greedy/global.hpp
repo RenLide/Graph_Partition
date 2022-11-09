@@ -11,12 +11,13 @@
 #include <stdio.h>
 
 const float RE = 1;
-const float X_MAX = 100;
+const float X_MAX = 50;
 const float X_MIN = 0;
-const float Y_MAX = 200;
+const float Y_MAX = 50;
 const float Y_MIN = 0;
-const float RANDOM = 0.6;
-const float TOL = 0.05;
-const float BFS_LOW = 0.7;
+const float RANDOM = 0.3;
+const float TOL = 0.01;
+const float BFS_LOW = 0.8;
+const float SFS_LOW = 0.5;
 const int BLOCK_NUM = 4;
 #endif /* global_hpp */

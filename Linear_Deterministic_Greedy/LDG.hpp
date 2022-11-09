@@ -14,18 +14,25 @@
 #include <fstream>
 class LDG {
 private:
+    void CaculateScores();
     int CaculatePointEdges(int x, int y, int n);
     int CaculateNeighbors(int x, int y, int n);
-    void LinearDeterministicGreedy(int x, int y);
+    bool LinearDeterministicGreedy(int x, int y);
     void BFS(int x, int y, int n);
+    bool ScoreFirstSearch(int x, int y, int n);
 public:
     int num; // block num
     vector<class Block> blocks;
+    vector<float> scores;
+    priority_queue<tuple<float, int, int> > score_queue;
+    set<pair<int, int> > edge_points;
     Graph graph;
     LDG(int k);
+    LDG(int k, ifstream& infile);
     void CaculateBlockWeights(int n);
     void CaculateBlockEdges(int n);
     void DistributeBlocks();
     void OutputResult(ofstream& outfile);
+    void PrintScores();
 };
 #endif /* LDG_hpp */
