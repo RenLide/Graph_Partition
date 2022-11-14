@@ -12,10 +12,10 @@
 #include "LDG.hpp"
 using namespace std;
 int main(int argc, const char * argv[]) {
-    LDG ldg(BLOCK_NUM);
-//    ifstream infile("/Users/renlide/Projects/Graph_Paritioning/result.dat", ios_base::in);
-//    LDG ldg(BLOCK_NUM, infile);
-//    infile.close();
+//    LDG ldg(BLOCK_NUM);
+    ifstream infile("/Users/renlide/Projects/Graph_Paritioning/result/result.dat", ios_base::in);
+    LDG ldg(BLOCK_NUM, infile);
+    infile.close();
     ldg.graph.PrintGraphWeight();
     cout << endl;
     ldg.PrintScores();

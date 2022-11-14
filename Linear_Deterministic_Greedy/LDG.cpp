@@ -318,44 +318,32 @@ void LDG::DistributeBlocks() {
 //        }
 //    }
 //    int count = 0;
-    while (!edge_points.empty()) {
-        set<pair<int, int>>::iterator it = edge_points.begin();
-//        for (bool result = false; it != edge_points.end() && result == false; it++) {
-//            result = LinearDeterministicGreedy(it->first, it->second);
-//        }
-//        it--;
-        LinearDeterministicGreedy(it->first, it->second);
-        pair<int, int> up, down, left, right;
-        up = pair<int, int>(it->first, it->second + 1);
-        down = pair<int, int>(it->first, it->second - 1);
-        left = pair<int, int>(it->first - 1, it->second);
-        right = pair<int, int>(it->first + 1, it->second);
-        if (edge_points.find(up) == edge_points.end() && up.second < graph.row && graph.grid[up.second * graph.column + up.first].GetF() == -1) edge_points.insert(up);
-        if (edge_points.find(down) == edge_points.end() && down.second >= 0 && graph.grid[down.second * graph.column + down.first].GetF() == -1) edge_points.insert(down);
-        if (edge_points.find(left) == edge_points.end() && left.first >= 0 && graph.grid[left.second * graph.column + left.first].GetF() == -1) edge_points.insert(left);
-        if (edge_points.find(right) == edge_points.end() && right.first < graph.column && graph.grid[right.second * graph.column + right.first].GetF() == -1) edge_points.insert(right);
-        edge_points.erase(pair<int, int>(it->first, it->second));
-//        count++;
-//        if (count == 386){
-//            count = count;
-//        }
-//        if (count == 500){
-//            count = count;
-////            break;
-//        }
-//        if (count == 1000){
-//            count = count;
-////            break;
-//        }
-//        if (count == 1500){
-//            count = count;
-////            break;
-//        }
-//        if (count == 2000){
-//            count = count;
-//            break;
-//        }
-    }
+//    while (!edge_points.empty()) {
+//        set<pair<int, int>>::iterator it = edge_points.begin();
+////        for (bool result = false; it != edge_points.end() && result == false; it++) {
+////            result = LinearDeterministicGreedy(it->first, it->second);
+////        }
+////        it--;
+//        LinearDeterministicGreedy(it->first, it->second);
+//        pair<int, int> up, down, left, right;
+//        up = pair<int, int>(it->first, it->second + 1);
+//        down = pair<int, int>(it->first, it->second - 1);
+//        left = pair<int, int>(it->first - 1, it->second);
+//        right = pair<int, int>(it->first + 1, it->second);
+//        if (edge_points.find(up) == edge_points.end() && up.second < graph.row && graph.grid[up.second * graph.column + up.first].GetF() == -1) edge_points.insert(up);
+//        if (edge_points.find(down) == edge_points.end() && down.second >= 0 && graph.grid[down.second * graph.column + down.first].GetF() == -1) edge_points.insert(down);
+//        if (edge_points.find(left) == edge_points.end() && left.first >= 0 && graph.grid[left.second * graph.column + left.first].GetF() == -1) edge_points.insert(left);
+//        if (edge_points.find(right) == edge_points.end() && right.first < graph.column && graph.grid[right.second * graph.column + right.first].GetF() == -1) edge_points.insert(right);
+//        edge_points.erase(pair<int, int>(it->first, it->second));
+////        if (count == 500){
+////            count = count;
+//////            break;
+////        }
+////        if (count == 1000){
+////            count = count;
+//////            break;
+////        }
+//    }
     for (int i = 0; i < num; i++) {
         CaculateBlockWeights(i);
         CaculateBlockEdges(i);

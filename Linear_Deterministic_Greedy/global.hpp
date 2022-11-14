@@ -11,9 +11,9 @@
 #include <stdio.h>
 
 const float RE = 1;
-const float X_MAX = 50;
+const float X_MAX = 20;
 const float X_MIN = 0;
-const float Y_MAX = 50;
+const float Y_MAX = 30;
 const float Y_MIN = 0;
 const float RANDOM = 0.3;
 const float TOL = 0.01;

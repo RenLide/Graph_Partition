@@ -15,7 +15,7 @@
 class NG {
 private:
     int CaculatePointEdges(int x, int y, int n);
-    int CaculateKeyPoints(int n, vector<pair<int, int> > &kp, bool f);
+    pair<int, float> CaculateKeyPoints(int n, vector<pair<int, int> > &kp, bool f);
 public:
     int num;
     Graph graph;
@@ -24,7 +24,8 @@ public:
     NG(int k, ifstream& infile);
     void CaculateBlockWeights(int n);
     void CaculateBlockEdges(int n);
-    void DistribitedBlocks(int n, int k, bool f);
+    void DistribitedBlocks(int n, int k);
     void OutputResult(ofstream& outfile);
+    void PrintResult();
 };
 #endif /* NG_hpp */

@@ -10,13 +10,14 @@
 #include "NG.hpp"
 using namespace std;
 int main(int argc, const char * argv[]) {
-//    NG ng(BLOCK_NUM);
-    ifstream infile("/Users/renlide/Projects/Graph_Paritioning/result/result.dat", ios_base::in);
-    NG ng(BLOCK_NUM, infile);
-    infile.close();
-    ng.graph.PrintGraphWeight();
+    NG ng(BLOCK_NUM);
+//    ifstream infile("/Users/renlide/Projects/Graph_Paritioning/result/result.dat", ios_base::in);
+//    NG ng(BLOCK_NUM, infile);
+//    infile.close();
+//    ng.graph.PrintGraphWeight();
     cout << endl;
-    ng.DistribitedBlocks(0, BLOCK_NUM, true);
+    ng.DistribitedBlocks(0, BLOCK_NUM);
+    ng.PrintResult();
     ofstream outfile("/Users/renlide/Projects/Graph_Paritioning/result/result.dat", ios_base::out);
     ng.OutputResult(outfile);
     outfile.close();
