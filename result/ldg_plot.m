@@ -24,7 +24,7 @@ Y = [-1 -1 0 0];
 hold on;
 for i = 1 : row
     for j = 1 : column
-        if result((i - 1) * column + j + 1,1) > 1
+        if result((i - 1) * column + j + 1,1) > 0
             fill(X+j, Y+i, color1(result((i - 1) * column + j + 1,2)+2, : ));
         else
             fill(X+j, Y+i, color2(result((i - 1) * column + j + 1,2)+2, : ));
