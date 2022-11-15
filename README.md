@@ -40,7 +40,7 @@ $$minE_{error} = \sum E_n \quad(n=0,1,…num-1)$$
 以下图为例，二维网格大小为 $8×6$ ( $column=8,row=6$ )，输入 $num=3$，将二维网格分成三块。需要计算资源的网格点用黑色表示，不妨令黑色网格点的计算资源为 $w_{ij}=1$，白色网格点不需要计算资源，即 $w_{ij}=0$。可能的一种划分方式如下图所示，二维网格被划分成了$Block0$ 、 $Block1$ 、 $Block2$。
 
 <div align=center>
-<img style="width:80%;" src=https://github.com/RenLide/Graph_Partition/tree/main/imageblock_example.png>
+<img style="width:80%;" src=https://github.com/RenLide/Graph_Partition/blob/main/image/block_example.png>
 </div>
 
 根据上述定义可以得出以下数据
