@@ -10,7 +10,7 @@
 如下图所示，在二维均匀网格 $G$ 中，需要计算资源的网格点用黑色表示，即 $w_{ij}\gt0$ ，例如 $p_{10}$ 、 $p_{22}$ ，不需要计算资源的网格点用白色表示，即 $w_{ij}=0$ ，例如 $p_{03}$ 。计算数据通信大小 $e_{ij}$ 时，由于 $p_{22}$ 相邻四点都在网格内，因此 $e_{22}=4$ 。 $p_{10}$ 在网格边界，其下方的网格点出现了越界情况，不纳入数据通信范围，因此 $e_{10}=3$ 。由于 $p_{03}$ 不需要计算资源，因此 $e_{03}=0$ 。
 
 <div align=center>
-<img style="width:50%;" src=/Users/renlide/projects/Graph_paritioning/image/grid_point_example.png>
+<img style="width:50%;" src=https://github.com/RenLide/Graph_Partition/blob/main/image/grid_point_example.png>
 </div>
 
 在划分二维网格时，需要输入二维网格 $G$ 的大小( $row×column$ )和每个网格点 $p_{ij}$ 对计算资源的需求 $w_{ij}$，并输入需要分割的块数( $num$ )。每个网格块( $block$ )用 $B_n$ 表示，若网格点 $p_{ij}$ 在网格块 $B_n$ 内，则有 $p_{ij} \in B_n$。$W_n$ 表示网格块 $B_n$ 所需计算资源，$E_n$ 表示网格块 $B_n$ 与外部数据通信的大小。
@@ -40,7 +40,7 @@ $$minE_{error} = \sum E_n \quad(n=0,1,…num-1)$$
 以下图为例，二维网格大小为 $8×6$ ( $column=8,row=6$ )，输入 $num=3$，将二维网格分成三块。需要计算资源的网格点用黑色表示，不妨令黑色网格点的计算资源为 $w_{ij}=1$，白色网格点不需要计算资源，即 $w_{ij}=0$。可能的一种划分方式如下图所示，二维网格被划分成了$Block0$ 、 $Block1$ 、 $Block2$。
 
 <div align=center>
-<img style="width:80%;" src=/Users/renlide/Projects/Graph_Paritioning/image/block_example.png>
+<img style="width:80%;" src=https://github.com/RenLide/Graph_Partition/tree/main/imageblock_example.png>
 </div>
 
 根据上述定义可以得出以下数据
