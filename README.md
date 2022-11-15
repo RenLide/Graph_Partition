@@ -16,9 +16,9 @@
 在划分二维网格时，需要输入二维网格 $G$ 的大小( $row×column$ )和每个网格点 $p_{ij}$ 对计算资源的需求 $w_{ij}$，并输入需要分割的块数( $num$ )。每个网格块( $block$ )用 $B_n$ 表示，若网格点 $p_{ij}$ 在网格块 $B_n$ 内，则有 $p_{ij} \in B_n$。$W_n$ 表示网格块 $B_n$ 所需计算资源，$E_n$ 表示网格块 $B_n$ 与外部数据通信的大小。
 
 定义二维网格 $G$ 为全部网格点 $p_{ij}$ 的集合，即有 
-$$ G=\{\ p_{ij}\ |\ i=0,1,…column-1,\ j=0,1,…row-1\} $$
+$$ G=\{p_{ij}|i=0,1,…column-1,j=0,1,…row-1\} $$
 
-定义 $B_n$ 为 $G$ 的子集，$\{B_0,B_1,…B_{num-1}\}$ 为 $G$ 的一个划分，即有 
+定义 $B_n$ 为 $G$ 的子集， $\{B_0,B_1,…B_{num-1}\}$ 为 $G$ 的一个划分，即有 
 $$ B_n \ne \emptyset \quad (n=0,1,…num-1)$$
 $$ G = \bigcup B_n\quad (n=0,1,…,num-1)$$
 $$ B_i \bigcap B_j = \emptyset \quad (i \ne j,\quad i=0,1,…num-1,\quad j=0,1,…num-1)$$
@@ -32,10 +32,10 @@ $$ W_n=\sum w_{ij}\quad (P_{ij} \in B_n)$$
 $$W_{sum}=\sum w_{ij} \quad (P_{ij} \in G)$$
 
 为了使得分割后的网格块拥有比较好的并行效果，应尽可能使得每个网格块所需的计算资源相同，即有 
-$$min\ W_{error} = \frac{1}{num} \sqrt{\frac{\sum(W_n-\overline{W})^2}{\overline{W}^2}}\quad(n=0,1,…num-1)$$
+$$minW_{error} = \frac{1}{num} \sqrt{\frac{\sum(W_n-\overline{W})^2}{\overline{W}^2}}\quad(n=0,1,…num-1)$$
 
 在尽可能均衡各个网格块计算资源的同时，应尽可能减小网格块之间的总通信，即有 
-$$min\ E_{error} = \sum E_n \quad(n=0,1,…num-1)$$
+$$minE_{error} = \sum E_n \quad(n=0,1,…num-1)$$
 
 以下图为例，二维网格大小为 $8×6$ ( $column=8,row=6$ )，输入 $num=3$，将二维网格分成三块。需要计算资源的网格点用黑色表示，不妨令黑色网格点的计算资源为 $w_{ij}=1$，白色网格点不需要计算资源，即 $w_{ij}=0$。可能的一种划分方式如下图所示，二维网格被划分成了$Block0$ 、 $Block1$ 、 $Block2$。
 
@@ -51,8 +51,8 @@ $$min\ E_{error} = \sum E_n \quad(n=0,1,…num-1)$$
 |$E_n$|2|5|3|
 
 计算可得 
-$$W_{sum}=18\qquad\overline{W}=6$$
-$$W_{error} = \frac{1}{num} \sqrt{\frac{\sum(W_n-\overline{W})^2}{\overline{W}^2}}=\frac{1}{3}\sqrt{\frac{(5-6)^2+(7-6)^2+(6-6)^2}{{6}^2}}=0.0786$$
+$$W_{sum}=18\qquad\overline{W}=6$$ 
+$$W_{error} = \frac{1}{num} \sqrt{\frac{\sum(W_n-\overline{W})^2}{\overline{W}^2}}=\frac{1}{3}\sqrt{\frac{(5-6)^2+(7-6)^2+(6-6)^2}{{6}^2}}=0.0786$$ 
 $$E_{error} = \sum E_n=2+5+3=10$$
 
 # 3. Naive Greedy Algorithm(NG)
