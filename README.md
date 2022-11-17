@@ -229,7 +229,7 @@ $k$ 值的选取是多样的，子网格块的选择则更加复杂。我们考�
 <img style="width:100%;" src=https://github.com/RenLide/Graph_Partition/blob/main/image/divided_points_example2.png>
 </div>
 
-如何找出这些不需要计算资源的划分点呢？对于 $W_{sum} = k * W_{total}/num_n$ 的情况，每个初始划分点必须放在 $Block_{01}$ 中，因此只能继续向后遍历寻找不需要计算资源的网格点，遇到需要计算资源的网格点则停止，否则会影响负载均衡，如左下图所示。对于 $W_{sum} > k * W_{total}/num_n$ 的情况，每个初始划分点在 $Block_{01}$ 和 $Block_{02}$ 中均可，因此其可搜寻的划分点更多，可以向前追溯也可以向后寻找。向前追溯时，遇到第一个需要计算资源的网格点时停止，此网格点虽然需要计算资源但不影响负载均衡，因此也可以纳入划分点中。先后遍历寻找则和 $W_{sum} = k * W_{total}/num_n$ 一样，遇到第一个需要计算资源的网格点时停止，但此网格点不纳入划分点中，如右下图所示。
+如何找出这些不需要计算资源的划分点呢？对于 $W_{sum} = k * W_{total}/num_n$ 的情况，每个初始划分点必须放在 $Block_{01}$ 中，因此只能继续向后遍历寻找不需要计算资源的网格点，遇到需要计算资源的网格点则停止，否则会影响负载均衡，如左下图所示。对于 $W_{sum} \gt k * W_{total}/num_n$ 的情况，每个初始划分点在 $Block_{01}$ 和 $Block_{02}$ 中均可，因此其可搜寻的划分点更多，可以向前追溯也可以向后寻找。向前追溯时，遇到第一个需要计算资源的网格点时停止，此网格点虽然需要计算资源但不影响负载均衡，因此也可以纳入划分点中。先后遍历寻找则和 $W_{sum} = k * W_{total}/num_n$ 一样，遇到第一个需要计算资源的网格点时停止，但此网格点不纳入划分点中，如右下图所示。
 
 <div align=center>
 <img style="width:100%;" src=https://github.com/RenLide/Graph_Partition/blob/main/image/divided_points_example3.png>
