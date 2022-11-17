@@ -10,7 +10,7 @@
 如下图所示，在二维均匀网格 $G$ 中，需要计算资源的网格点用黑色表示，即 $w_{ij}\gt0$ ，例如 $p_{10}$ 、 $p_{22}$ ，不需要计算资源的网格点用白色表示，即 $w_{ij}=0$ ，例如 $p_{03}$ 。计算数据通信大小 $e_{ij}$ 时，由于 $p_{22}$ 相邻四点都在网格内，因此 $e_{22}=4$ 。 $p_{10}$ 在网格边界，其下方的网格点出现了越界情况，不纳入数据通信范围，因此 $e_{10}=3$ 。由于 $p_{03}$ 不需要计算资源，因此 $e_{03}=0$ 。
 
 <div align=center>
-<img style="width:50%;" src=https://github.com/RenLide/Graph_Partition/tree/main/image/grid_point_example.png>
+<img style="width:50%;" src=https://github.com/RenLide/Graph_Partition/blob/main/image/grid_point_example.png>
 </div>
 
 <!--
@@ -46,7 +46,7 @@ $$minE_{error} = \sum E_n \quad(n=0,1,…num-1)$$
 以下图为例，二维网格大小为 $8×6$ ( $column=8,row=6$ )，输入 $num=3$，将二维网格分成三块。需要计算资源的网格点用黑色表示，不妨令黑色网格点的计算资源为 $w_{ij}=1$，白色网格点不需要计算资源，即 $w_{ij}=0$。可能的一种划分方式如下图所示，二维网格被划分成了$Block0$ 、 $Block1$ 、 $Block2$。
 
 <div align=center>
-<img style="width:60%;" src=https://github.com/RenLide/Graph_Partition/tree/main/image/block_example.png>
+<img style="width:60%;" src=https://github.com/RenLide/Graph_Partition/blob/main/image/block_example.png>
 </div>
 
 <!--
@@ -156,13 +156,13 @@ public:
 在下图中，`class Graph`为 $8×6$ 的二维网格($col=8，row =6$)，`gird`是长度为48的一维向量。通过 $y*column+x$ 可知坐标为 $(2,1)$ 的网格点在`grid`中对应的下标为10。`class Block`中，$block0$ 的`flag=0`，其边界范围为`x_min=0` `x_max=5` `y_min=1` `y_max=5`。
 
 <div align=center>
-<img style="width:80%;" src=https://github.com/RenLide/Graph_Partition/tree/main/image/grid_example.png>
+<img style="width:80%;" src=https://github.com/RenLide/Graph_Partition/blob/main/image/grid_example.png>
 </div>
 
 在 $block0$ 中，确定边界后可以统计出网格块中每行和每列的计算资源需求。网格块的列数为`block_col = x_max - x_min + 1 = 6`，行数为`block_row = y_max - y_min + 1 = 5`。统计后的计算资源信息分别存在`col_weights` `row_weights`中，具体数据如下图所示。
 
 <div align=center>
-<img style="width:70%;" src=https://github.com/RenLide/Graph_Partition/tree/main/image/col_row_example.png>
+<img style="width:70%;" src=https://github.com/RenLide/Graph_Partition/blob/main/image/col_row_example.png>
 </div>
 
 ## 算法设计
@@ -184,13 +184,13 @@ NG算法在开始划分前需要知道两件事情：
 假定当前网格块所需的总计算资源为10，最终要被分成5块。为了保证最终的网格块所需计算资源尽可能均衡，比较好的划分方式是分成计算资源为4和6的两个子网格块。这样就能把`NG(Block_n,5)`分解成`NG(Block_n1,2)`和`NG(Block_n2,3)`两个子问题。
 
 <div align=center>
-<img style="width:100%;" src=https://github.com/RenLide/Graph_Partition/tree/main/image/NG_example1.png>
+<img style="width:100%;" src=https://github.com/RenLide/Graph_Partition/blob/main/image/NG_example1.png>
 </div>
 
 另一种比较好的划分方式是将 $block_n$ 分成计算资源为2和8的子网格块。这样就把`NG(Block_n,5)`分解成`NG(Block_n1,1)`和`NG(Block_n2,4)`两个子问题。如果分成计算资源为5和5的两个字网格块，则不能很好保证在最终划分中得到计算资源比较均衡的子网块，因此这种划分方式是不正确的。
 
 <div align=center>
-<img style="width:100%;" src=https://github.com/RenLide/Graph_Partition/tree/main/image/NG_example2.png>
+<img style="width:100%;" src=https://github.com/RenLide/Graph_Partition/blob/main/image/NG_example2.png>
 </div>
 
 因此对于一个计算资源为 $W_n$ 且最终需要被划分为 $num$ 块的网格块，被分割的两个子网格块应该尽可能接近 $\frac{W_n}{num_n}$ 的整数倍。在`global.hpp`中定义了全局常量`TOL`，代表在分割时所能容忍的最大误差，即每个子网格块所需计算资源的范围为 $\frac{(k\pm TOL)*W_n}{num_n}$，其中 $k$ 为整数。假定分成的两个子网格块所需的计算资源分别为 $\frac{k * W_n}{num_n}$ 和 $\frac{(num_n-k) * W_n}{num_n}$，则`NG(Block_n, num_n)`可以分解成`NG(Block_n1, k)`和`NG(Block_n2, num_n - k)`两个子问题。
@@ -206,13 +206,13 @@ $k$ 值的选取是多样的，子网格块的选择则更加复杂。我们考�
 考虑网格图( $Graph$ )中`grid`对网格点的存储方式，可以按照存储方式进行遍历，也可以称作网格块的**行遍历**。如下图所示，$Block0$ 从 $(x_{min},y_{min})$ 开始逐行遍历，直至 $(x_{max},y_{max})$ 结束。通过`Point.GetF() = Block.flag`判定网格点是否属于 $Block0$，从而统计出可用于划分的网格点，不妨称其为**划分点**。
 
 <div align=center>
-<img style="width:80%;" src=https://github.com/RenLide/Graph_Partition/tree/main/image/row_traversal.png>
+<img style="width:80%;" src=https://github.com/RenLide/Graph_Partition/blob/main/image/row_traversal.png>
 </div>
 
 对于 $Block0$，如果要分成4块，即处理`NG(Block_0, 4)`，则按照行遍历和 $W_{sum}\ge\frac{k * W_n}{num_n}\ (k = 1, 2,...num_n-1)$ 规则可以找到3个划分点，如左下图所示。如果要分成3块，即处理`NG(Block_0, 3)`，则可以找到2个划分点，如右下图所示。
 
 <div align=center>
-<img style="width:100%;" src=https://github.com/RenLide/Graph_Partition/tree/main/image/row_traversal_example.png>
+<img style="width:100%;" src=https://github.com/RenLide/Graph_Partition/blob/main/image/row_traversal_example.png>
 </div>
 
 当选取一个网格点用于划分时，不妨规定此网格点包含在前一个子网格块中。如左上图所示，当选择`k=2`网格点时，`Block0`被划分成`Block01` `Block02`，此时`NG(Block_0, 4)`被划分成`NG(Block_01, 2)` `NG(Block_02, 2)`。
@@ -220,25 +220,25 @@ $k$ 值的选取是多样的，子网格块的选择则更加复杂。我们考�
 每个划分点都能满足均衡负载的要求，如何从多个划分点中选择呢？考虑第二个目标：网格块之间的数据通信尽可能小。如下图所示，以`k=1`作为划分点，则`Block01`与`Block02`之间的数据通信为 $E_1=5$，以`k=2`作为划分点，则`Block01`与`Block02`之间的数据通信为 $E_2=4$。因此通过贪心的思想，找到数据通信最小的划分点既可。注意`k=1`时，出现了子网格块$Block_{02}$不连通的情况，这是NG算法暂时无法避免的。
 
 <div align=center>
-<img style="width:100%;" src=https://github.com/RenLide/Graph_Partition/tree/main/image/divided_points_example1.png>
+<img style="width:100%;" src=https://github.com/RenLide/Graph_Partition/blob/main/image/divided_points_example1.png>
 </div>
 
 同理可以计算出`k=3`时，数据通信大小$E_3=4$，因此在`k=2`与`k=3`中选择一种即可。但如果考虑右下图的情况呢？此情况与`k=2`非常相似，但其数据通信只有$E_{2'}=2$。可以观察到初始的划分点周围有一些不需要计算资源的网格点，这些点划分到`Block01`或者`Block02`不会影响负载均衡，但会对数据通信大小产生影响。在保证负载均衡的前提下，将这些不需要计算资源的网格点也当成划分点，有利于帮助找到更合适的点。因此这些不需要计算资源的网格点也将纳入到划分点的考虑范围。
 
 <div align=center>
-<img style="width:100%;" src=https://github.com/RenLide/Graph_Partition/tree/main/image/divided_points_example2.png>
+<img style="width:100%;" src=https://github.com/RenLide/Graph_Partition/blob/main/image/divided_points_example2.png>
 </div>
 
-如何找出这些不需要计算资源的划分点呢？对于 $W_{sum} = k * W_{total}/num_n$ 的情况，每个初始划分点必须放在 $Block01$ 中，因此只能继续向后遍历寻找不需要计算资源的网格点，遇到需要计算资源的网格点则停止，否则会影响负载均衡，如左下图所示。对于 $W_{sum} > k * W_{total}/num_n$ 的情况，每个初始划分点在 $Block01$ 和 $Block02$ 中均可，因此其可搜寻的划分点更多，可以向前追溯也可以向后寻找。向前追溯时，遇到第一个需要计算资源的网格点时停止，此网格点虽然需要计算资源但不影响负载均衡，因此也可以纳入划分点中。先后遍历寻找则和 $W_{sum} = k * W_{total}/num_n$ 一样，遇到第一个需要计算资源的网格点时停止，但此网格点不纳入划分点中，如右下图所示。
+如何找出这些不需要计算资源的划分点呢？对于 $W_{sum} = k * W_{total}/num_n$ 的情况，每个初始划分点必须放在 $Block01$ 中，因此只能继续向后遍历寻找不需要计算资源的网格点，遇到需要计算资源的网格点则停止，否则会影响负载均衡，如左下图所示。对于 $W_{sum} > k*W_{total}/num_n$ 的情况，每个初始划分点在 $Block01$ 和 $Block02$ 中均可，因此其可搜寻的划分点更多，可以向前追溯也可以向后寻找。向前追溯时，遇到第一个需要计算资源的网格点时停止，此网格点虽然需要计算资源但不影响负载均衡，因此也可以纳入划分点中。先后遍历寻找则和 $W_{sum} = k*W_{total}/num_n$ 一样，遇到第一个需要计算资源的网格点时停止，但此网格点不纳入划分点中，如右下图所示。
 
 <div align=center>
-<img style="width:100%;" src=https://github.com/RenLide/Graph_Partition/tree/main/image/divided_points_example3.png>
+<img style="width:100%;" src=https://github.com/RenLide/Graph_Partition/blob/main/image/divided_points_example3.png>
 </div>
 
 至此，算法的实现思路已经基本清晰。但如果只考虑行遍历，网格块会越分越薄，因此可以定义一种类似的遍历方法，**列遍历**。如左下图所示，$Block0$ 从 $(x_{min},y_{min})$ 开始逐列遍历，直至 $(x_{max},y_{max})$ 结束。划分点也可以按类似的方式寻找，以 $(2,2)$作为划分点后的子网格块如右下图所示。
 
 <div align=center>
-<img style="width:100%;" src=https://github.com/RenLide/Graph_Partition/tree/main/image/col_traversal.png>
+<img style="width:100%;" src=https://github.com/RenLide/Graph_Partition/blob/main/image/col_traversal.png>
 </div>
 
 ## 算法实现
@@ -246,21 +246,21 @@ $k$ 值的选取是多样的，子网格块的选择则更加复杂。我们考�
 ## 测试样例
 6×8 **行遍历**和**列遍历**
 <div align=center>
-<img style="width:30%;" src=https://github.com/RenLide/Graph_Partition/tree/main/result/NG_sample2_6_8.png>
-<img style="width:30%;" src=https://github.com/RenLide/Graph_Partition/tree/main/result/NG_sample_6_8.png>
+<img style="width:30%;" src=https://github.com/RenLide/Graph_Partition/blob/main/result/NG_sample2_6_8.png>
+<img style="width:30%;" src=https://github.com/RenLide/Graph_Partition/blob/main/result/NG_sample_6_8.png>
 </div>
 
 50×50 NG算法测试
 
 <div align=center>
-<img style="width:70%;" src=https://github.com/RenLide/Graph_Partition/tree/main/result/NG_Sample_50_50.png>
+<img style="width:70%;" src=https://github.com/RenLide/Graph_Partition/blob/main/result/NG_Sample_50_50.png>
 </div>
 
 20×30 NG算法与LDG算法测试对比
 
 <div align=center>
-<img style="width:40%;" src=https://github.com/RenLide/Graph_Partition/tree/main/result/NG_Sample_20_30.png>
-<img style="width:40%;" src=https://github.com/RenLide/Graph_Partition/tree/main/result/LDG_Sample_20_30.png>
+<img style="width:40%;" src=https://github.com/RenLide/Graph_Partition/blob/main/result/NG_Sample_20_30.png>
+<img style="width:40%;" src=https://github.com/RenLide/Graph_Partition/blob/main/result/LDG_Sample_20_30.png>
 </div>
 
 
