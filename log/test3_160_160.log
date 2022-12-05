@@ -1,0 +1,363 @@
+********************** Test 160*160 **********************
+BLOCK_NUM = 4    RANDOM = 0.3
+--------------------------------------------------------
+This is 1 time(s)!
+--------------------------------------------------------
+************* NG *************
+Total Weight : 7774
+Block[0](weights,edges) = (1943,58)
+Block[1](weights,edges) = (1943,45)
+Block[2](weights,edges) = (1944,50)
+Block[3](weights,edges) = (1944,51)
+Time : 32.179 ms
+Weight Error : 0.000128634
+Edge Error : 204
+Distributed successfully!
+******************************
+************ LDG *************
+Total Weight : 7774
+Block[0](weights,edges) = (1918,273)
+Block[1](weights,edges) = (1963,300)
+Block[2](weights,edges) = (1930,542)
+Block[3](weights,edges) = (1963,115)
+Time : 301.775 ms
+Weight Error : 0.00513409
+Edge Error : 1230
+Distributed successfully!
+******************************
+************ BLG *************
+Total Weight : 7774
+Block[0](weights,edges) = (1961,54)
+Block[1](weights,edges) = (1960,57)
+Block[2](weights,edges) = (1907,47)
+Block[3](weights,edges) = (1946,43)
+Time : 21.416 ms
+Weight Error : 0.00563205
+Edge Error : 201
+Distributed successfully!
+******************************
+--------------------------------------------------------
+This is 2 time(s)!
+--------------------------------------------------------
+************* NG *************
+Total Weight : 7671
+Block[0](weights,edges) = (1917,44)
+Block[1](weights,edges) = (1918,60)
+Block[2](weights,edges) = (1918,73)
+Block[3](weights,edges) = (1918,57)
+Time : 36.27 ms
+Weight Error : 0.000112896
+Edge Error : 234
+Distributed successfully!
+******************************
+************ LDG *************
+Total Weight : 7671
+Block[0](weights,edges) = (1925,223)
+Block[1](weights,edges) = (1937,284)
+Block[2](weights,edges) = (1872,475)
+Block[3](weights,edges) = (1937,111)
+Time : 295.817 ms
+Weight Error : 0.0070041
+Edge Error : 1093
+Distributed successfully!
+******************************
+************ BLG *************
+Total Weight : 7671
+Block[0](weights,edges) = (1953,37)
+Block[1](weights,edges) = (1922,45)
+Block[2](weights,edges) = (1883,44)
+Block[3](weights,edges) = (1913,99)
+Time : 21.117 ms
+Weight Error : 0.00650599
+Edge Error : 225
+Distributed successfully!
+******************************
+--------------------------------------------------------
+This is 3 time(s)!
+--------------------------------------------------------
+************* NG *************
+Total Weight : 7723
+Block[0](weights,edges) = (1931,49)
+Block[1](weights,edges) = (1931,40)
+Block[2](weights,edges) = (1930,41)
+Block[3](weights,edges) = (1931,79)
+Time : 25.799 ms
+Weight Error : 0.000112136
+Edge Error : 209
+Distributed successfully!
+******************************
+************ LDG *************
+Total Weight : 7723
+Block[0](weights,edges) = (1950,167)
+Block[1](weights,edges) = (1950,494)
+Block[2](weights,edges) = (1873,561)
+Block[3](weights,edges) = (1950,109)
+Time : 293.468 ms
+Weight Error : 0.00863446
+Edge Error : 1331
+Distributed successfully!
+******************************
+************ BLG *************
+Total Weight : 7723
+Block[0](weights,edges) = (1950,55)
+Block[1](weights,edges) = (1917,51)
+Block[2](weights,edges) = (1907,45)
+Block[3](weights,edges) = (1949,49)
+Time : 22.104 ms
+Weight Error : 0.00494204
+Edge Error : 200
+Distributed successfully!
+******************************
+--------------------------------------------------------
+This is 4 time(s)!
+--------------------------------------------------------
+************* NG *************
+Total Weight : 7811
+Block[0](weights,edges) = (1953,49)
+Block[1](weights,edges) = (1952,47)
+Block[2](weights,edges) = (1953,42)
+Block[3](weights,edges) = (1953,82)
+Time : 21.084 ms
+Weight Error : 0.000110873
+Edge Error : 220
+Distributed successfully!
+******************************
+************ LDG *************
+Total Weight : 7811
+Block[0](weights,edges) = (1971,384)
+Block[1](weights,edges) = (1973,270)
+Block[2](weights,edges) = (1895,576)
+Block[3](weights,edges) = (1972,123)
+Time : 291.445 ms
+Weight Error : 0.0085391
+Edge Error : 1353
+Distributed successfully!
+******************************
+************ BLG *************
+Total Weight : 7811
+Block[0](weights,edges) = (1977,47)
+Block[1](weights,edges) = (1949,41)
+Block[2](weights,edges) = (1935,55)
+Block[3](weights,edges) = (1950,47)
+Time : 21.741 ms
+Weight Error : 0.00389319
+Edge Error : 190
+Distributed successfully!
+******************************
+--------------------------------------------------------
+This is 5 time(s)!
+--------------------------------------------------------
+************* NG *************
+Total Weight : 7689
+Block[0](weights,edges) = (1923,43)
+Block[1](weights,edges) = (1922,80)
+Block[2](weights,edges) = (1922,52)
+Block[3](weights,edges) = (1922,56)
+Time : 30.537 ms
+Weight Error : 0.000112632
+Edge Error : 231
+Distributed successfully!
+******************************
+************ LDG *************
+Total Weight : 7689
+Block[0](weights,edges) = (1910,289)
+Block[1](weights,edges) = (1942,349)
+Block[2](weights,edges) = (1895,460)
+Block[3](weights,edges) = (1942,124)
+Time : 291.419 ms
+Weight Error : 0.00531919
+Edge Error : 1222
+Distributed successfully!
+******************************
+************ BLG *************
+Total Weight : 7689
+Block[0](weights,edges) = (1928,42)
+Block[1](weights,edges) = (1944,51)
+Block[2](weights,edges) = (1898,52)
+Block[3](weights,edges) = (1919,49)
+Time : 21.146 ms
+Weight Error : 0.00432277
+Edge Error : 194
+Distributed successfully!
+******************************
+--------------------------------------------------------
+This is 6 time(s)!
+--------------------------------------------------------
+************* NG *************
+Total Weight : 7537
+Block[0](weights,edges) = (1885,39)
+Block[1](weights,edges) = (1884,55)
+Block[2](weights,edges) = (1884,76)
+Block[3](weights,edges) = (1884,62)
+Time : 37.435 ms
+Weight Error : 0.000114903
+Edge Error : 232
+Distributed successfully!
+******************************
+************ LDG *************
+Total Weight : 7537
+Block[0](weights,edges) = (1892,493)
+Block[1](weights,edges) = (1838,435)
+Block[2](weights,edges) = (1904,358)
+Block[3](weights,edges) = (1903,141)
+Time : 301.389 ms
+Weight Error : 0.007195
+Edge Error : 1427
+Distributed successfully!
+******************************
+************ BLG *************
+Total Weight : 7537
+Block[0](weights,edges) = (1916,45)
+Block[1](weights,edges) = (1868,46)
+Block[2](weights,edges) = (1855,44)
+Block[3](weights,edges) = (1898,49)
+Time : 21.711 ms
+Weight Error : 0.00638618
+Edge Error : 184
+Distributed successfully!
+******************************
+--------------------------------------------------------
+This is 7 time(s)!
+--------------------------------------------------------
+************* NG *************
+Total Weight : 7643
+Block[0](weights,edges) = (1910,42)
+Block[1](weights,edges) = (1911,74)
+Block[2](weights,edges) = (1911,44)
+Block[3](weights,edges) = (1911,55)
+Time : 30.264 ms
+Weight Error : 0.00011331
+Edge Error : 215
+Distributed successfully!
+******************************
+************ LDG *************
+Total Weight : 7643
+Block[0](weights,edges) = (1930,178)
+Block[1](weights,edges) = (1892,387)
+Block[2](weights,edges) = (1891,587)
+Block[3](weights,edges) = (1930,116)
+Time : 315.388 ms
+Weight Error : 0.00503814
+Edge Error : 1268
+Distributed successfully!
+******************************
+************ BLG *************
+Total Weight : 7643
+Block[0](weights,edges) = (1936,54)
+Block[1](weights,edges) = (1894,46)
+Block[2](weights,edges) = (1894,46)
+Block[3](weights,edges) = (1919,51)
+Time : 22.799 ms
+Weight Error : 0.00465674
+Edge Error : 197
+Distributed successfully!
+******************************
+--------------------------------------------------------
+This is 8 time(s)!
+--------------------------------------------------------
+************* NG *************
+Total Weight : 7734
+Block[0](weights,edges) = (1933,42)
+Block[1](weights,edges) = (1934,54)
+Block[2](weights,edges) = (1934,90)
+Block[3](weights,edges) = (1933,48)
+Time : 41.607 ms
+Weight Error : 0.000129299
+Edge Error : 234
+Distributed successfully!
+******************************
+************ LDG *************
+Total Weight : 7734
+Block[0](weights,edges) = (1953,390)
+Block[1](weights,edges) = (1953,323)
+Block[2](weights,edges) = (1875,587)
+Block[3](weights,edges) = (1953,107)
+Time : 294.875 ms
+Weight Error : 0.00873416
+Edge Error : 1407
+Distributed successfully!
+******************************
+************ BLG *************
+Total Weight : 7734
+Block[0](weights,edges) = (1965,51)
+Block[1](weights,edges) = (1928,53)
+Block[2](weights,edges) = (1897,42)
+Block[3](weights,edges) = (1944,44)
+Time : 20.92 ms
+Weight Error : 0.00641955
+Edge Error : 190
+Distributed successfully!
+******************************
+--------------------------------------------------------
+This is 9 time(s)!
+--------------------------------------------------------
+************* NG *************
+Total Weight : 7650
+Block[0](weights,edges) = (1912,52)
+Block[1](weights,edges) = (1912,46)
+Block[2](weights,edges) = (1913,46)
+Block[3](weights,edges) = (1913,43)
+Time : 26.655 ms
+Weight Error : 0.000130719
+Edge Error : 187
+Distributed successfully!
+******************************
+************ LDG *************
+Total Weight : 7650
+Block[0](weights,edges) = (1932,204)
+Block[1](weights,edges) = (1904,381)
+Block[2](weights,edges) = (1882,395)
+Block[3](weights,edges) = (1932,85)
+Time : 293.433 ms
+Weight Error : 0.00548864
+Edge Error : 1065
+Distributed successfully!
+******************************
+************ BLG *************
+Total Weight : 7650
+Block[0](weights,edges) = (1923,43)
+Block[1](weights,edges) = (1924,47)
+Block[2](weights,edges) = (1889,45)
+Block[3](weights,edges) = (1914,43)
+Time : 20.842 ms
+Weight Error : 0.00369035
+Edge Error : 178
+Distributed successfully!
+******************************
+--------------------------------------------------------
+This is 10 time(s)!
+--------------------------------------------------------
+************* NG *************
+Total Weight : 7737
+Block[0](weights,edges) = (1935,43)
+Block[1](weights,edges) = (1934,40)
+Block[2](weights,edges) = (1934,87)
+Block[3](weights,edges) = (1934,54)
+Time : 44.692 ms
+Weight Error : 0.000111933
+Edge Error : 224
+Distributed successfully!
+******************************
+************ LDG *************
+Total Weight : 7737
+Block[0](weights,edges) = (1954,187)
+Block[1](weights,edges) = (1875,668)
+Block[2](weights,edges) = (1954,261)
+Block[3](weights,edges) = (1954,139)
+Time : 293.768 ms
+Weight Error : 0.0088427
+Edge Error : 1255
+Distributed successfully!
+******************************
+************ BLG *************
+Total Weight : 7737
+Block[0](weights,edges) = (1956,56)
+Block[1](weights,edges) = (1933,37)
+Block[2](weights,edges) = (1916,66)
+Block[3](weights,edges) = (1932,50)
+Time : 20.858 ms
+Weight Error : 0.00368473
+Edge Error : 209
+Distributed successfully!
+******************************
+************************** END *************************
