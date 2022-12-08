@@ -59,9 +59,9 @@ do
             echo "This is" $j "time(s)!"  >> ${LOG_PATH}/test${k}_`expr $col \* $i`_`expr $row \* $i`.log
             echo "--------------------------------------------------------" >> ${LOG_PATH}/test${k}_`expr $col \* $i`_`expr $row \* $i`.log
             ./GenData `expr $col \* $i` `expr $row \* $i` $random ${DATA_PATH}/data`expr $col \* $i`_`expr $row \* $i`.dat
-            ./NG ${DATA_PATH}/data`expr $col \* $i`_`expr $row \* $i`.dat ${RESULT_PATH}/result_NG`expr $col \* $i`_`expr $row \* $i`.dat ${block_num} ${RESULT_PATH}/plot_NG${k}_`expr $col \* $i`_`expr $row \* $i`.dat >> ${LOG_PATH}/test${k}_`expr $col \* $i`_`expr $row \* $i`.log
-            ./LDG ${DATA_PATH}/data`expr $col \* $i`_`expr $row \* $i`.dat ${RESULT_PATH}/result_LDG`expr $col \* $i`_`expr $row \* $i`.dat ${block_num} ${RESULT_PATH}/plot_LDG${k}_`expr $col \* $i`_`expr $row \* $i`.dat >> ${LOG_PATH}/test${k}_`expr $col \* $i`_`expr $row \* $i`.log
-            ./BLG ${DATA_PATH}/data`expr $col \* $i`_`expr $row \* $i`.dat ${RESULT_PATH}/result_BLG`expr $col \* $i`_`expr $row \* $i`.dat ${block_num} ${RESULT_PATH}/plot_BLG${k}_`expr $col \* $i`_`expr $row \* $i`.dat >> ${LOG_PATH}/test${k}_`expr $col \* $i`_`expr $row \* $i`.log
+            ./NG ${DATA_PATH}/data`expr $col \* $i`_`expr $row \* $i`.dat ${RESULT_PATH}/result_NG`expr $col \* $i`_`expr $row \* $i`.dat ${block_num} ${RESULT_PATH}/error_NG${k}_`expr $col \* $i`_`expr $row \* $i`.dat >> ${LOG_PATH}/test${k}_`expr $col \* $i`_`expr $row \* $i`.log
+            ./LDG ${DATA_PATH}/data`expr $col \* $i`_`expr $row \* $i`.dat ${RESULT_PATH}/result_LDG`expr $col \* $i`_`expr $row \* $i`.dat ${block_num} ${RESULT_PATH}/error_LDG${k}_`expr $col \* $i`_`expr $row \* $i`.dat >> ${LOG_PATH}/test${k}_`expr $col \* $i`_`expr $row \* $i`.log
+            ./BLG ${DATA_PATH}/data`expr $col \* $i`_`expr $row \* $i`.dat ${RESULT_PATH}/result_BLG`expr $col \* $i`_`expr $row \* $i`.dat ${block_num} ${RESULT_PATH}/error_BLG${k}_`expr $col \* $i`_`expr $row \* $i`.dat >> ${LOG_PATH}/test${k}_`expr $col \* $i`_`expr $row \* $i`.log
         done
         echo "************************** END *************************" >> ${LOG_PATH}/test${k}_`expr $col \* $i`_`expr $row \* $i`.log
     done
