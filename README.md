@@ -237,21 +237,21 @@ $k$ 值的选取是多样的，子网格块的选择则更加复杂。我们考�
 ## 测试样例
 6×8 **行遍历**和**列遍历**
 <div align=center>
-<img style="width:30%;" src=https://github.com/RenLide/Graph_Partition/blob/main/result/NG_sample2_6_8.png>
-<img style="width:30%;" src=https://github.com/RenLide/Graph_Partition/blob/main/result/NG_sample_6_8.png>
+<img style="width:30%;" src=https://github.com/RenLide/Graph_Partition/blob/main/image/NG_sample2_6_8.png>
+<img style="width:30%;" src=https://github.com/RenLide/Graph_Partition/blob/main/image/NG_sample_6_8.png>
 </div>
 
 50×50 NG算法测试
 
 <div align=center>
-<img style="width:70%;" src=https://github.com/RenLide/Graph_Partition/blob/main/result/NG_Sample_50_50.png>
+<img style="width:70%;" src=https://github.com/RenLide/Graph_Partition/blob/main/image/NG_Sample_50_50.png>
 </div>
 
 20×30 NG算法与LDG算法测试对比
 
 <div align=center>
-<img style="width:40%;" src=https://github.com/RenLide/Graph_Partition/blob/main/result/NG_Sample_20_30.png>
-<img style="width:40%;" src=https://github.com/RenLide/Graph_Partition/blob/main/result/LDG_Sample_20_30.png>
+<img style="width:40%;" src=https://github.com/RenLide/Graph_Partition/blob/main/image/NG_Sample_20_30.png>
+<img style="width:40%;" src=https://github.com/RenLide/Graph_Partition/blob/main/image/LDG_Sample_20_30.png>
 </div>
 
 
