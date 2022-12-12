@@ -1,3 +1,0 @@
-/Users/renlide/Projects/Graph_Paritioning/Baseline_Greedy/build/CMakeFiles/BLG.dir
-/Users/renlide/Projects/Graph_Paritioning/Baseline_Greedy/build/CMakeFiles/edit_cache.dir
-/Users/renlide/Projects/Graph_Paritioning/Baseline_Greedy/build/CMakeFiles/rebuild_cache.dir

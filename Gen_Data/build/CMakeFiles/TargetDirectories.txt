@@ -1,3 +1,0 @@
-/Users/renlide/Projects/Graph_Paritioning/Gen_Data/build/CMakeFiles/GenData.dir
-/Users/renlide/Projects/Graph_Paritioning/Gen_Data/build/CMakeFiles/edit_cache.dir
-/Users/renlide/Projects/Graph_Paritioning/Gen_Data/build/CMakeFiles/rebuild_cache.dir
