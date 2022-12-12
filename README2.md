@@ -95,7 +95,7 @@ Graph_Paritioning
 
 ### 可执行文件说明
 
-**`GenData`** 用于生成随机的二维网格。需要输入二维网格的列`col`、行`row`、计算网格点占比`random`以及输出文件路径`DATA_PATH`。使用命令 **`./GenData col row random DATA_PATH`** 生成相应的数据文件。例如使用命令`GenData 10 20 0.3 data.dat`，则会在当前目录的`data.dat`文件中生成10列20行规模大小的二维网格，且30%的网格点需要计算资源。
+**`GenData`** 用于生成随机的二维网格。需要输入二维网格的列`col`、行`row`、计算网格点占比`random`以及输出文件路径`DATA_PATH`。使用命令 **`./GenData col row random DATA_PATH`** 生成相应的数据文件。例如使用命令`GenData 10 20 0.3 data.dat`，则会在当前目录的`data.dat`文件中生成10列20行规模大小的二维网格，且30%的网格点需要计算资源。其中每个网格点所需计算资源`weight = 1 or 0`。
 
 **`BLG`** **`NG`** **`LDG`** 采用不同算法划分二维网格，使用方法相同。以 **`BLG`** 为例，需要输入源数据文件`SRC_PATH`、目标数据文件`DEST_PATH`、网格块数`block_num`、误差数据文件`ERROR_PATH`。使用命令 **`./BLG SRC_PATH DEST_PATH block_num ERROR_PATH`** 生成划分后的二维网格数据文件和用于误差分析的数据文件。运行后会在终端显示此次运行的日志`log`，包含由文字描述的运行时间、误差信息和分块信息。
 
@@ -103,9 +103,17 @@ Graph_Paritioning
 
 ### 测试脚本说明
 
-在`test`文件夹中，`test.sh`脚本可自动测试`BLG` `NG` `LDG`算法的性能。使用 **`./test.sh`** 即可运行脚本。该脚本可自动编译`Gen_Data` `Baseline_Greedy` `Naive_Greedy` `Linear_Deterministic_Greedy`文件夹中的代码，并将生成的` GenData` `BLG` `NG` `LDG`可执行文件复制到`./test/`目录下。用户可修改脚本，测试不同规模、不同网格块数、不同计算网格点比例下，三种算法的性能。固定参数后，可通过`GenData`生成多组数据，减小偶然误差。
+在`test`文件夹中，`test.sh`脚本可自动测试`BLG` `NG` `LDG`算法的性能。使用 **`./test.sh`** 即可运行脚本。该脚本可自动编译`Gen_Data` `Baseline_Greedy` `Naive_Greedy` `Linear_Deterministic_Greedy`文件夹中的代码，并将生成的` GenData` `BLG` `NG` `LDG`可执行文件复制到`./test/`目录下。用户可修改脚本，测试不同规模、不同网格块数、不同计算点占比下，三种算法的性能。固定参数后，可通过`GenData`生成多组数据，减小偶然误差。
 
-本`test.sh`
+本`test.sh`用于测试计算占比 $random$ 对算法性能的影响。
+
+### 数据文件格式说明
+
+`data.dat`和`result.dat`的数据格式相同，均为两列。前三行为头部信息，第一行记录`xmin`和`xmax`，表示 $x$ 方向的范围。第二行记录 `ymin`和`ymax`，表示 $y$ 方向的范围。第三行记录二维网格最小分辨率`re`和计算点占比`random`。后面每行分别记录每个网格点的计算资源需求`weight`和所属网格块`flag`。初始生成的`weight = 1 or 0` `flag = 0`。
+
+### 可视化脚本说明
+
+可视化脚本由 $matlab$ 实现，脚本在`plot`文件夹中。`result.m`用于生成可视化二维网格，`analysis.m`用于分析算法性能。
 
 <div align=center>
 <img style="width:80%;" src=https://github.com/RenLide/Graph_Partition/blob/main//image/test_explain.png>
