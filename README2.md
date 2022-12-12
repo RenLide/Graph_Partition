@@ -108,5 +108,5 @@ Graph_Paritioning
 本`test.sh`
 
 <div align=center>
-<img style="width:80%;" src=/Users/renlide/Projects/Graph_Paritioning/image/test_explain.png>
+<img style="width:80%;" src=https://github.com/RenLide/Graph_Partition/blob/main//image/test_explain.png>
 </div>
